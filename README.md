@@ -8,6 +8,6 @@ Do
 
 ```
 
-git submodule add https://github.com/pathumego/fontbuilder /build
+git submodule add https://github.com/pathumego/fontkaru /build
 
 ```
