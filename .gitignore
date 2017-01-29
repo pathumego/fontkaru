@@ -1,0 +1,5 @@
+log.txt
+*.ufo
+.DS_Store
+*.ttf
+*.otf
