@@ -4,7 +4,7 @@
 # Update VERSION.txt to increment version on the png.
 
 DATE=`date +%d%b%Y-%T`
-CONFIG=`./config.yml`
+CONFIG=`config.yml`
 VERSION=`cat $CONFIG | shyaml get-value info.version`
 FAMILY=`cat $CONFIG  | shyaml get-value info.family`
 NOTE=`cat $CONFIG  | shyaml get-value info.note`
@@ -16,7 +16,7 @@ cp -r ../sources/*.ufo ./
 cp -r ../documentation/specimen-sources ./specimen-sources
 
 fontmake --ufo-paths *.ufo --output otf ttf >log.txt
-weasyprint weasyprint $SPECIMENFILE ./specimen.pdf
+weasyprint weasyprint $SPECIMENFILE specimen.pdf
 wkhtmltoimage  $DAILYSTATUSFILE daily-status.png
 convert daily-status.png  -gravity SouthEast -pointsize 25 \
    -fill black -annotate +10+5 "$NOTE $FAMILY $VERSION $DATE" daily-status.png
