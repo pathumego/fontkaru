@@ -21,5 +21,6 @@ wkhtmltoimage  $DAILYSTATUSFILE daily-status.png
 convert daily-status.png  -gravity SouthEast -pointsize 25 \
    -fill black -annotate +10+5 "$NOTE $FAMILY $VERSION $DATE" daily-status.png
 mv ./daily-status.png ../documentation/daily-status.png
+mv ./specimen.pdf ../documentation/daily-status.png
 mv ./master_otf/* ../fonts/otf/
 mv ./master_ttf/* ../fonts/ttf/
