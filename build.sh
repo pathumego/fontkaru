@@ -4,7 +4,7 @@
 # Update VERSION.txt to increment version on the png.
 
 DATE=`date +%d%b%Y-%T`
-CONFIG=`config.yml`
+CONFIG="config.yml"
 VERSION=`cat $CONFIG | shyaml get-value info.version`
 FAMILY=`cat $CONFIG  | shyaml get-value info.family`
 NOTE=`cat $CONFIG  | shyaml get-value info.note`
