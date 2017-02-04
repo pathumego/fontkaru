@@ -4,5 +4,5 @@ info:
   note: Work in progress!
 
 settings:
-  daily-sample-file: index.html
-  specimens-file: specimen.html
+  daily-status-file: specimen-sources/daily-status.html
+  specimen-file: specimen-sources/specimen.html
