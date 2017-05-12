@@ -13,14 +13,17 @@ SPECIMENFILE=`cat $CONFIG  | shyaml get-value settings.specimen-file`
 
 ufonormalizer ../sources/*.ufo
 cp -r ../sources/*.ufo ./
-cp -r ../documentation/specimen-sources ./specimen-sources
+cp -r ../documentation/specimen-sources/ specimen-sources
 
-fontmake --ufo-paths *.ufo --output otf ttf >log.txt
+fontmake --ufo-paths *.ufo --output otf ttf >log.txt --autohint
+mv ./master_otf/* ../fonts/otf/
+mv ./master_ttf/* ../fonts/ttf/
+mv ./autohinted/* ../fonts/hinted/ttf/
+
 weasyprint $SPECIMENFILE specimen.pdf
+mv ./specimen.pdf ../documentation/specimen.pdf
+
 wkhtmltoimage  $DAILYSTATUSFILE daily-status.png
 convert daily-status.png  -gravity SouthEast -pointsize 25 \
    -fill black -annotate +10+5 "$NOTE $FAMILY $VERSION $DATE" daily-status.png
 mv ./daily-status.png ../documentation/daily-status.png
-mv ./specimen.pdf ../documentation/daily-status.png
-mv ./master_otf/* ../fonts/otf/
-mv ./master_ttf/* ../fonts/ttf/
