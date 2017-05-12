@@ -1,7 +1,7 @@
 #!/bin/sh
-# Maname daily build script
+# Maname daily build script, not for production builds.
 # Needs fontmake, wkhtmltoimage and imagemagick and shyaml<https://github.com/0k/shyaml> to run this script
-# Update VERSION.txt to increment version on the png.
+# Set-up build `config.yml`.
 
 DATE=`date +%d%b%Y-%T`
 CONFIG="config.yml"
